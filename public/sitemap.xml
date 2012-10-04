@@ -1,15 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://jrowdev.com//blog/2012/07/22/intro/</loc>
+        <lastmod>2012-10-04T16:38:09-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://jrowdev.com//blog/2012/07/22/the-problem-with-pingdom/</loc>
+        <lastmod>2012-10-04T16:38:09-04:00</lastmod>
+    </url>
+    <url>
         <loc>http://jrowdev.com//blog/2012/10/04/hello-world/</loc>
-        <lastmod>2012-10-04T12:10:56-04:00</lastmod>
+        <lastmod>2012-10-04T16:38:09-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://jrowdev.com//about/</loc>
+        <lastmod>2012-10-04T16:38:09-04:00</lastmod>
     </url>
     <url>
         <loc>http://jrowdev.com//blog/archives/</loc>
-        <lastmod>2012-10-04T12:10:56-04:00</lastmod>
+        <lastmod>2012-10-04T16:38:09-04:00</lastmod>
     </url>
     <url>
         <loc>http://jrowdev.com//</loc>
-        <lastmod>2012-10-04T12:10:56-04:00</lastmod>
+        <lastmod>2012-10-04T16:38:09-04:00</lastmod>
     </url>
 </urlset>
