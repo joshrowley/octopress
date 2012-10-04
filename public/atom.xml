@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://yoursite.com/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2012-10-04T12:19:33-04:00</updated>
-  <id>http://yoursite.com/</id>
+  <title><![CDATA[Free Play]]></title>
+  <link href="http://jrowdev.com//atom.xml" rel="self"/>
+  <link href="http://jrowdev.com//"/>
+  <updated>2012-10-04T16:17:04-04:00</updated>
+  <id>http://jrowdev.com//</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Josh Rowley]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hello world]]></title>
-    <link href="http://yoursite.com/blog/2012/10/04/hello-world/"/>
+    <link href="http://jrowdev.com//blog/2012/10/04/hello-world/"/>
     <updated>2012-10-04T12:10:00-04:00</updated>
-    <id>http://yoursite.com/blog/2012/10/04/hello-world</id>
+    <id>http://jrowdev.com//blog/2012/10/04/hello-world</id>
     <content type="html"><![CDATA[<p>Hello World</p>
 
 <p>Hi everyone, my name is Josh Rowley, and I’m a student at the newly created Flatiron School. It’s been two days since we started, and I’ve already felt that I’ve gained more understanding of web development in the past two days then any of the self study I did before I started in the months leading up to it.</p>

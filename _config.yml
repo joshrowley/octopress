@@ -2,12 +2,12 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://jrowdev.com/
+title: Free Play
+subtitle: Git push it to the limit!
+author: Josh Rowley
 simple_search: http://google.com/search
-description:
+description: Former \"IT Guy\" going full throttle to become a professional developer.
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
