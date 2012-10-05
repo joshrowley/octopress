@@ -4,7 +4,7 @@
   <title><![CDATA[Free Play]]></title>
   <link href="http://jrowdev.com//atom.xml" rel="self"/>
   <link href="http://jrowdev.com//"/>
-  <updated>2012-10-04T16:40:24-04:00</updated>
+  <updated>2012-10-04T23:49:30-04:00</updated>
   <id>http://jrowdev.com//</id>
   <author>
     <name><![CDATA[Josh Rowley]]></name>
@@ -14,13 +14,92 @@
 
   
   <entry>
+    <title type="html"><![CDATA[SQL: Schemin' with Schemas]]></title>
+    <link href="http://jrowdev.com//blog/2012/10/04/sql-schemin-with-schemas/"/>
+    <updated>2012-10-04T23:24:00-04:00</updated>
+    <id>http://jrowdev.com//blog/2012/10/04/sql-schemin-with-schemas</id>
+    <content type="html"><![CDATA[<p>Today was spent working on databases. I had a lot of fun writing SQL queries. We were tasked to create the schema for a simple quiz app. Here&#8217;s the schema:</p>
+
+<pre>
+
+CREATE table user (
+    id INTEGER PRIMARY KEY,
+    name TEXT
+);
+
+CREATE table quiz (
+    id INTEGER PRIMARY KEY,
+    name
+);
+
+CREATE table question (
+    id INTEGER PRIMARY KEY,
+    content TEXT,
+    quiz_id INTEGER
+);
+
+CREATE table choice (
+    id INTEGER PRIMARY KEY,
+    content TEXT,
+    correct BOOLEAN,
+    question_id INTEGER
+);
+
+CREATE table answer (
+    id INTEGER PRIMARY KEY,
+    user_id INTEGER,
+    question_id INTEGER,
+    choice_id INTEGER
+);
+
+</pre>
+
+
+<p>With this schema, we had to write some queries and insert sample data. I pair programmed with Matt, and the last challenge was a bit tricky for us, but it was a fun challenge to complete. It feels really good to be learning so much so quickly.</p>
+
+<p>Create a stats.sql that will show the percentage (if you want to try to use MATH functions within SQL) or the total right answers to each question. This will need to use joins too and might get complicated.</p>
+
+<pre>
+
+SELECT question.content, (COUNT (*) * 100.0) / (SELECT COUNT (*) FROM answer WHERE question_id = question.id)
+FROM question
+INNER JOIN choice
+ON question.id = choice.question_id
+INNER JOIN answer
+ON question.id = answer.question_id
+WHERE choice.correct = 1 AND
+question.id = 1 AND
+answer.choice_id = choice.id;
+
+</pre>
+
+
+<p>We then iterate through all the questions replacing the question.id value in the where clause. That outputs the following data with the percentage of responses that were correct:</p>
+
+<pre>
+
+How do you initialize a Git repository?|100.0
+What git command stages changes?|50.0
+How do you make a commit once changes are staged?|100.0
+What command do you use to see whether there are any untracked files in your repository?|100.0
+How do you create a new branch and switch to it with one line?|50.0
+How do you create a table in SQL?|100.0
+How do you remove a table in SQL?|50.0
+How do you write a query that returns all rows from a table?|50.0
+What is the difference between an inner join and an outer join?|50.0
+How do you add a row to a table?|50.0
+
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Hello world]]></title>
     <link href="http://jrowdev.com//blog/2012/10/04/hello-world/"/>
     <updated>2012-10-04T12:10:00-04:00</updated>
     <id>http://jrowdev.com//blog/2012/10/04/hello-world</id>
-    <content type="html"><![CDATA[<p>Hello World</p>
-
-<p>Hi everyone, my name is Josh Rowley, and I’m a student at the newly created Flatiron School. It’s been two days since we started, and I’ve already felt that I’ve gained more understanding of web development in the past two days then any of the self study I did before I started in the months leading up to it.</p>
+    <content type="html"><![CDATA[<p>Hi everyone, my name is Josh Rowley, and I’m a student at the newly created Flatiron School. It’s been two days since we started, and I’ve already felt that I’ve gained more understanding of web development in the past two days then any of the self study I did before I started in the months leading up to it.</p>
 
 <p>The most helpful thing to have in order to learn how to code, at least for me, is to be working with a group with the same goals and mission as yourself. That’s what we have here at the school. It also allows us to work in more realistic environment. The benefits of learning in a team for a beginner cannot be understated. Everyone has different strengths and thought processes, and putting them together helps us solve the challenges of development in faster and newer ways.</p>
 

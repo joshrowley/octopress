@@ -5,8 +5,6 @@ date: 2012-10-04 12:10
 comments: true
 categories: 
 ---
-Hello World
-
 Hi everyone, my name is Josh Rowley, and I’m a student at the newly created Flatiron School. It’s been two days since we started, and I’ve already felt that I’ve gained more understanding of web development in the past two days then any of the self study I did before I started in the months leading up to it.
 
 The most helpful thing to have in order to learn how to code, at least for me, is to be working with a group with the same goals and mission as yourself. That’s what we have here at the school. It also allows us to work in more realistic environment. The benefits of learning in a team for a beginner cannot be understated. Everyone has different strengths and thought processes, and putting them together helps us solve the challenges of development in faster and newer ways.
