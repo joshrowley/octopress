@@ -4,7 +4,7 @@
   <title><![CDATA[Free Play]]></title>
   <link href="http://jrowdev.com//atom.xml" rel="self"/>
   <link href="http://jrowdev.com//"/>
-  <updated>2012-10-04T23:49:30-04:00</updated>
+  <updated>2012-10-09T19:47:40-04:00</updated>
   <id>http://jrowdev.com//</id>
   <author>
     <name><![CDATA[Josh Rowley]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Tips for Solo GitHubbers: How to Code with People for the First Time]]></title>
+    <link href="http://jrowdev.com//blog/2012/10/09/tips-for-solo-githubbers-how-to-code-with-people-for-the-first-time/"/>
+    <updated>2012-10-09T19:43:00-04:00</updated>
+    <id>http://jrowdev.com//blog/2012/10/09/tips-for-solo-githubbers-how-to-code-with-people-for-the-first-time</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[SQL: Schemin' with Schemas]]></title>
