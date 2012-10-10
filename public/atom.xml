@@ -4,7 +4,7 @@
   <title><![CDATA[Free Play]]></title>
   <link href="http://jrowdev.com//atom.xml" rel="self"/>
   <link href="http://jrowdev.com//"/>
-  <updated>2012-10-09T20:05:07-04:00</updated>
+  <updated>2012-10-09T20:13:47-04:00</updated>
   <id>http://jrowdev.com//</id>
   <author>
     <name><![CDATA[Josh Rowley]]></name>
@@ -18,7 +18,7 @@
     <link href="http://jrowdev.com//blog/2012/10/09/tips-for-solo-githubbers-how-to-code-with-people-for-the-first-time/"/>
     <updated>2012-10-09T19:43:00-04:00</updated>
     <id>http://jrowdev.com//blog/2012/10/09/tips-for-solo-githubbers-how-to-code-with-people-for-the-first-time</id>
-    <content type="html"><![CDATA[<p><img src="../images/git_collaboration.jpg" alt="Coding Together" />
+    <content type="html"><![CDATA[<p><img src="http://jrowdev.com//images/git_collaboration.jpg" alt="Coding Together" />
 Photo by <a href="http://www.flickr.com/photos/hackny/6890140478/">hackNY</a></p>
 
 <p>I used Git collaboratively for the first time exactly one week ago on Day 1 of Flatiron School. It wasn&#8217;t pretty, you can read a little about it in my first post.</p>

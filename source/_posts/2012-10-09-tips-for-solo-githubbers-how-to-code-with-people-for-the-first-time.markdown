@@ -6,7 +6,7 @@ comments: true
 categories: 
 ---
 
-![Coding Together](../images/git_collaboration.jpg)
+![Coding Together](/images/git_collaboration.jpg)
 Photo by <a href="http://www.flickr.com/photos/hackny/6890140478/">hackNY</a>
 
 I used Git collaboratively for the first time exactly one week ago on Day 1 of Flatiron School. It wasn't pretty, you can read a little about it in my first post. 
