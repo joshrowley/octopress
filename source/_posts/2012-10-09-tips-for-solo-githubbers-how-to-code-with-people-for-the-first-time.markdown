@@ -5,6 +5,9 @@ date: 2012-10-09 19:43
 comments: true
 categories: 
 ---
+
+![Coding Together](../images/git_collaboration.jpg)
+
 I used Git collaboratively for the first time exactly one week ago on Day 1 of Flatiron School. It wasn't pretty, you can read a little about it in my first post. 
 
 I had some experience using Git while doing Michael Hartl's Rails Tutorial in my spare time, but I had never used it with other people. Git is very simple when it's just you. I was pretty much only doing commits and pushing to the remote, with the occasional branch.
@@ -13,7 +16,7 @@ This is one of the biggest limitations facing beginners trying to learn how to b
 
 Once you got your collaborators, here are some tips I'd like to share based on my first experience of being a newbie lone wolf Git user being thrown into my first group Git collaboration:
 
-1. _Establish team's workflow process and best practices first._ It's really important that everyone understands conceptually how your repo is organized, and who should be committing where. Do not rush this step! If someone is a little shaky on the foundations, take the time to get them up to speed. Even someone with the best of intentions can cause havoc on the rest of the group's work if they misunderstand your group's workflow.
+1. *Establish team's workflow process and best practices first.* It's really important that everyone understands conceptually how your repo is organized, and who should be committing where. Do not rush this step! If someone is a little shaky on the foundations, take the time to get them up to speed. Even someone with the best of intentions can cause havoc on the rest of the group's work if they misunderstand your group's workflow.
 
 2. _Make sure you're working on the correct branch._ I pulled down the master branch, and created my own feature branch. However, at some point I checked out the master branch and didn't notice. I lazily pushed to GitHub without specifying a specific branch (I assumed was in my feature branch), and as a result committed a major party foul by pushing to the master branch. If you're making commits on the wrong branch, you're setting yourself up for confusion when trying to merge feature branches together, or merging them back to master.
 
