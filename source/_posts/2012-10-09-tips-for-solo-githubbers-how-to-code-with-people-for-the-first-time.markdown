@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Tips for Solo GitHubbers: How to Code with People for the First Time"
+title: "4 Tips for Solo GitHubbers: How to Code with People for the First Time"
 date: 2012-10-09 19:43
 comments: true
 categories: 
@@ -21,6 +21,6 @@ Once you got your collaborators, here are some tips I'd like to share based on m
 
 2. _Make sure you're working on the correct branch._ I pulled down the master branch, and created my own feature branch. However, at some point I checked out the master branch and didn't notice. I lazily pushed to GitHub without specifying a specific branch (I assumed was in my feature branch), and as a result committed a major party foul by pushing to the master branch. If you're making commits on the wrong branch, you're setting yourself up for confusion when trying to merge feature branches together, or merging them back to master.
 
-3. _Do not run any commands if you don't understand what it does._ Not only that, but do you understand its consequences in your specific context? I was super eager to get started with git. I didn't remember everything, so I asked my fellow classmates about how to do this and that when I ran up against a wall. Or, I would try stumbling around with git commands until I got what I wanted. Do not do this! Git is not IRB! You can't just play around with it. If you're stuck, take as much time as you need to research and figure out what you need to do, or ask someone who would know. Otherwise, you can screw up your repo big time.
+3. _Do not run any commands if you don't understand what it does._ Not only that, but do you understand its consequences in your specific context? I was super eager to get started with git. I didn't remember everything, so I asked my fellow classmates what commands to try when I ran up against a wall. Or, I would try stumbling around with git commands until I got what I wanted. Do not do this! Git is not IRB! You can't just play around with it. If you're stuck, take as much time as you need to research and figure out what you need to do, or ask someone who would know. Otherwise, you can screw up your repo big time.
 
 4. _One mistake can proliferate exponentially into a huge mess._ Unfortunately, my only advice is to try to not make any mistakes, especially when merging, rebasing, pulling, and pushing. Take a moment to step back and doublecheck that you are using the correct command, in the correct branch, to the correct remote. Ask yourself, when I hit enter, what will this do? If you're not 100%, don't do it.
