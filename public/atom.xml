@@ -4,7 +4,7 @@
   <title><![CDATA[Free Play]]></title>
   <link href="http://jrowdev.com//atom.xml" rel="self"/>
   <link href="http://jrowdev.com//"/>
-  <updated>2012-10-17T12:51:06-04:00</updated>
+  <updated>2012-10-17T12:54:36-04:00</updated>
   <id>http://jrowdev.com//</id>
   <author>
     <name><![CDATA[Josh Rowley]]></name>
@@ -33,7 +33,7 @@
 <li><p><strong>&#8220;Go Simple&#8221;</strong><br><br> When given a coding challenge or project to implement, I tend to overthink it, or get too ambitious. I try to design my code to be open for all these awesome features I&#8217;d like to add. I try to implement everything at once, instead of doing small, basic, iterative steps. Also, when thinking of new projects I want to start, I try to think of next Facebook or amazing web app, but in order to grow as a developer I need to think of what small tools I could build that would be a great learning experience.</p></li>
 <li><p><strong>&#8220;They don&#8217;t need to be perfect&#8221;</strong><br><br> For a lot of beginners, myself included, there&#8217;s an intense urge to &#8220;get it right&#8221;. There must be a perfect way of doing something. As I&#8217;ve become more immersed in the coding world, I&#8217;ve noticed that this is a destructive instinct. First, there are a million different ways to tackle a problem. Second, I need to being comfortable with sharing imperfect code with others. The worst thing is to work on code in isolation until the day I think it&#8217;s &#8220;perfect&#8221;. That day will most likely never come, and the code you wrote will never be used or shared.</p></li>
 <li><p><strong>&#8220;Consider open-sourcing them. It may help someone else learn&#8221;</strong><br><br> Pair programming at Flatiron school has been such a great learning experience. It&#8217;s been extremely beneficial for me to code with another person. Going back to the previous points, even if your program is super simple and imperfect, share it with people! It&#8217;s easy to forget that at one point, a former version of myself wouldn&#8217;t have been able to do it, and would have searched for the answer online.</p></li>
-<li><p><strong>&#8220;Re-inventing the wheel is ok&#8221;</strong><br><br> With all the gems avaiable on Ruby, it&#8217;s amazing that I can easily add some amazing functionality to my applications, even without a ton of experience. I now want to try my hand at building my own version of the sqlite3-ruby or nokogiri gems. Even though it&#8217;s not necessary, it gives me projects I can work on, and gain further insight.</p></li>
+<li><p><strong>&#8220;Re-inventing the wheel is ok&#8221;</strong><br><br> With all the gems available on Ruby, it&#8217;s amazing that I can easily add some amazing functionality to my applications, even without a ton of experience. I now want to try my hand at building my own version of the sqlite3-ruby or nokogiri gems. Even though it&#8217;s not necessary, it gives me projects I can work on, and gain further insight.</p></li>
 </ol>
 
 ]]></content>
