@@ -7,7 +7,7 @@ categories:
 ---
 Today was spent working on databases. I had a lot of fun writing SQL queries. We were tasked to create the schema for a simple quiz app. Here's the schema:
 
-<pre>
+<p><pre style="max-width:500px">
 
 CREATE table user (
 	id INTEGER PRIMARY KEY,
@@ -39,13 +39,13 @@ CREATE table answer (
 	choice_id INTEGER
 );
 
-</pre>
+</pre><p>
 
 With this schema, we had to write some queries and insert sample data. I pair programmed with Matt, and the last challenge was a bit tricky for us, but it was a fun challenge to complete. It feels really good to be learning so much so quickly.
 
 Create a stats.sql that will show the percentage (if you want to try to use MATH functions within SQL) or the total right answers to each question. This will need to use joins too and might get complicated.
 
-<pre>
+<p><pre style="max-width: 500px">
 
 SELECT question.content, (COUNT (*) * 100.0) / (SELECT COUNT (*) FROM answer WHERE question_id = question.id)
 FROM question
@@ -57,11 +57,11 @@ WHERE choice.correct = 1 AND
 question.id = 1 AND
 answer.choice_id = choice.id;
 
-</pre>
+</pre></p>
 
-We then iterate through all the questions replacing the question.id value in the where clause. That outputs the following data with the percentage of responses that were correct:
+<p>We then iterate through all the questions replacing the question.id value in the where clause. That outputs the following data with the percentage of responses that were correct:</p>
 
-<pre>
+<p><pre style="max-width:500px">
 
 How do you initialize a Git repository?|100.0
 What git command stages changes?|50.0
@@ -74,4 +74,4 @@ How do you write a query that returns all rows from a table?|50.0
 What is the difference between an inner join and an outer join?|50.0
 How do you add a row to a table?|50.0
 
-</pre>
+</pre></p>

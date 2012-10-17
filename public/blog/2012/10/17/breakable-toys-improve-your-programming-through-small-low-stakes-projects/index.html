@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>SQL: Schemin' with Schemas - Free Play</title>
+  <title>Breakable Toys: Improve your programming through small, low-stakes projects - Free Play</title>
   <meta name="author" content="Josh Rowley">
 
   
-  <meta name="description" content="Tweet SQL: Schemin' With Schemas Oct 4th, 2012 Today was spent working on databases. I had a lot of fun writing SQL queries. We were tasked to &hellip;">
+  <meta name="description" content="Tweet Breakable Toys: Improve Your Programming Through Small, Low-stakes Projects Oct 17th, 2012 I was perusing Speaker Deck and found this great &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://jrowdev.com//blog/2012/10/04/sql-schemin-with-schemas/">
+  <link rel="canonical" href="http://jrowdev.com//blog/2012/10/17/breakable-toys-improve-your-programming-through-small-low-stakes-projects/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -109,7 +109,7 @@
     <article class="post">
   <div class="sharing-box">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jrowdev.com//blog/2012/10/04/sql-schemin-with-schemas/" data-via="joshrowley" data-counturl="http://jrowdev.com//blog/2012/10/04/sql-schemin-with-schemas/" data-size="large">Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jrowdev.com//blog/2012/10/17/breakable-toys-improve-your-programming-through-small-low-stakes-projects/" data-via="joshrowley" data-counturl="http://jrowdev.com//blog/2012/10/17/breakable-toys-improve-your-programming-through-small-low-stakes-projects/" data-size="large">Tweet</a>
   
   
   
@@ -118,7 +118,7 @@
   
   <header>
     
-      <h2 class="entry-title">SQL: Schemin' With Schemas</h2>
+      <h2 class="entry-title">Breakable Toys: Improve Your Programming Through Small, Low-stakes Projects</h2>
     
     
       <p class="meta">
@@ -134,83 +134,30 @@
   
 
 
-<time datetime="2012-10-04T23:24:00-04:00" pubdate data-updated="true">Oct 4<span>th</span>, 2012</time>
+<time datetime="2012-10-17T11:37:00-04:00" pubdate data-updated="true">Oct 17<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<p>Today was spent working on databases. I had a lot of fun writing SQL queries. We were tasked to create the schema for a simple quiz app. Here&#8217;s the schema:</p>
+<p>I was perusing Speaker Deck and found <a href="https://speakerdeck.com/u/martinisoft/p/breakable-toys">this great deck</a> by <a href="https://twitter.com/martinisoft">Aaron Kalin</a> on learning programming through creating breakable toys.</p>
 
-<p><pre style="max-width:500px">
+<p>There are some great suggestions he makes for beginning programmers who are trying to grow. A couple of the points are ones that I hear from <a href="" title="https://twitter.com/aviflombaum">Avi</a> all the time.</p>
 
-CREATE table user (
-    id INTEGER PRIMARY KEY,
-    name TEXT
-);
+<p>What&#8217;s a breakable toy?</p>
 
-CREATE table quiz (
-    id INTEGER PRIMARY KEY,
-    name
-);
+<p><script async class="speakerdeck-embed" data-slide="8" data-id="4fa03d2d5f48f700220279a1" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script></p>
 
-CREATE table question (
-    id INTEGER PRIMARY KEY,
-    content TEXT,
-    quiz_id INTEGER
-);
 
-CREATE table choice (
-    id INTEGER PRIMARY KEY,
-    content TEXT,
-    correct BOOLEAN,
-    question_id INTEGER
-);
+<p>As a newcomer to the software development field, the principles Aaron mentions are important to keep in mind for any new developer and I see how they relate to my experience:</p>
 
-CREATE table answer (
-    id INTEGER PRIMARY KEY,
-    user_id INTEGER,
-    question_id INTEGER,
-    choice_id INTEGER
-);
-
-</pre><p>
-
-With this schema, we had to write some queries and insert sample data. I pair programmed with Matt, and the last challenge was a bit tricky for us, but it was a fun challenge to complete. It feels really good to be learning so much so quickly.
-
-Create a stats.sql that will show the percentage (if you want to try to use MATH functions within SQL) or the total right answers to each question. This will need to use joins too and might get complicated.
-
-<p><pre style="max-width: 500px">
-
-SELECT question.content, (COUNT (*) * 100.0) / (SELECT COUNT (*) FROM answer WHERE question_id = question.id)
-FROM question
-INNER JOIN choice
-ON question.id = choice.question_id
-INNER JOIN answer
-ON question.id = answer.question_id
-WHERE choice.correct = 1 AND
-question.id = 1 AND
-answer.choice_id = choice.id;
-
-</pre></p>
-
-<p>We then iterate through all the questions replacing the question.id value in the where clause. That outputs the following data with the percentage of responses that were correct:</p>
-
-<p><pre style="max-width:500px">
-
-How do you initialize a Git repository?|100.0
-What git command stages changes?|50.0
-How do you make a commit once changes are staged?|100.0
-What command do you use to see whether there are any untracked files in your repository?|100.0
-How do you create a new branch and switch to it with one line?|50.0
-How do you create a table in SQL?|100.0
-How do you remove a table in SQL?|50.0
-How do you write a query that returns all rows from a table?|50.0
-What is the difference between an inner join and an outer join?|50.0
-How do you add a row to a table?|50.0
-
-</pre></p>
+<ol>
+<li><p><strong>&#8220;Go Simple&#8221;</strong><br><br> When given a coding challenge or project to implement, I tend to overthink it, or get too ambitious. I try to design my code to be open for all these awesome features I&#8217;d like to add. I try to implement everything at once, instead of doing small, basic, iterative steps. Also, when thinking of new projects I want to start, I try to think of next Facebook or amazing web app, but in order to grow as a developer I need to think of what small tools I could build that would be a great learning experience.</p></li>
+<li><p><strong>&#8220;They don&#8217;t need to be perfect&#8221;</strong><br><br> For a lot of beginners, myself included, there&#8217;s an intense urge to &#8220;get it right&#8221;. There must be a perfect way of doing something. As I&#8217;ve become more immersed in the coding world, I&#8217;ve noticed that this is a destructive instinct. First, there are a million different ways to tackle a problem. Second, I need to being comfortable with sharing imperfect code with others. The worst thing is to work on code in isolation until the day I think it&#8217;s &#8220;perfect&#8221;. That day will most likely never come, and the code you wrote will never be used or shared.</p></li>
+<li><p><strong>&#8220;Consider open-sourcing them. It may help someone else learn&#8221;</strong><br><br> Pair programming at Flatiron school has been such a great learning experience. It&#8217;s been extremely beneficial for me to code with another person. Going back to the previous points, even if your program is super simple and imperfect, share it with people! It&#8217;s easy to forget that at one point, a former version of myself wouldn&#8217;t have been able to do it, and would have searched for the answer online.</p></li>
+<li><p><strong>&#8220;Re-inventing the wheel is ok&#8221;</strong><br><br> With all the gems avaiable on Ruby, it&#8217;s amazing that I can easily add some amazing functionality to my applications, even without a ton of experience. I now want to try my hand at building my own version of the sqlite3-ruby or nokogiri gems. Even though it&#8217;s not necessary, it gives me projects I can work on, and gain further insight.</p></li>
+</ol>
 
 
 
@@ -237,8 +184,8 @@ How do you add a row to a table?|50.0
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://jrowdev.com//blog/2012/10/04/sql-schemin-with-schemas/';
-        var disqus_url = 'http://jrowdev.com//blog/2012/10/04/sql-schemin-with-schemas/';
+        var disqus_identifier = 'http://jrowdev.com//blog/2012/10/17/breakable-toys-improve-your-programming-through-small-low-stakes-projects/';
+        var disqus_url = 'http://jrowdev.com//blog/2012/10/17/breakable-toys-improve-your-programming-through-small-low-stakes-projects/';
         var disqus_script = 'embed.js';
       
     (function () {
