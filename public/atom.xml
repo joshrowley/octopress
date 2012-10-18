@@ -4,7 +4,7 @@
   <title><![CDATA[Free Play]]></title>
   <link href="http://jrowdev.com//atom.xml" rel="self"/>
   <link href="http://jrowdev.com//"/>
-  <updated>2012-10-17T20:54:46-04:00</updated>
+  <updated>2012-10-17T23:10:20-04:00</updated>
   <id>http://jrowdev.com//</id>
   <author>
     <name><![CDATA[Josh Rowley]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Fog is starting to lift!]]></title>
+    <title type="html"><![CDATA[The Fog of Programming]]></title>
     <link href="http://jrowdev.com//blog/2012/10/17/fog-is-starting-to-lift/"/>
     <updated>2012-10-17T19:56:00-04:00</updated>
     <id>http://jrowdev.com//blog/2012/10/17/fog-is-starting-to-lift</id>
@@ -24,9 +24,9 @@
 
 <p>Then one day, you&#8217;ll finally learn something, and you&#8217;ll go back to those fuzzy concepts and you&#8217;ll suddenly a ray of clarity will strike your mind and things start to come together more.</p>
 
-<p>I&#8217;m really starting to understand classes, and how damn useful they are. I kind of understood classes and class methods, but I finally &#8220;saw the light&#8221; with instance variables and class methods.</p>
+<p>I&#8217;m really starting to understand classes, and how damn useful they are. I sort of understood them before, but I finally &#8220;saw the light&#8221; once I started connecting the dots between scope, instance variables, and class methods.</p>
 
-<p>A couple days ago, variable scoping really started to click in my head, and now I see instance variables, instance methods, and class methods in a whole new light.</p>
+<p>A couple days ago, variable scoping really started to click in my head and feel natural and intuitive. Now I see instance variables, instance methods, and class methods in a whole new light.</p>
 
 <p>It&#8217;s quite a rewarding feeling.</p>
 

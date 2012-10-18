@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Fog is starting to lift!"
+title: "The Fog of Programming"
 date: 2012-10-17 19:56
 comments: true
 categories: 
@@ -11,9 +11,9 @@ As a result, new programmers feel like they're in a fog cloud, where they kind o
 
 Then one day, you'll finally learn something, and you'll go back to those fuzzy concepts and you'll suddenly a ray of clarity will strike your mind and things start to come together more.
 
-I'm really starting to understand classes, and how damn useful they are. I kind of understood classes and class methods, but I finally "saw the light" with instance variables and class methods.
+I'm really starting to understand classes, and how damn useful they are. I sort of understood them before, but I finally "saw the light" once I started connecting the dots between scope, instance variables, and class methods.
 
-A couple days ago, variable scoping really started to click in my head, and now I see instance variables, instance methods, and class methods in a whole new light.
+A couple days ago, variable scoping really started to click in my head and feel natural and intuitive. Now I see instance variables, instance methods, and class methods in a whole new light.
 
 It's quite a rewarding feeling.
 
