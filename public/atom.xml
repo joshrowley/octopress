@@ -4,7 +4,7 @@
   <title><![CDATA[Free Play]]></title>
   <link href="http://jrowdev.com//atom.xml" rel="self"/>
   <link href="http://jrowdev.com//"/>
-  <updated>2012-10-17T12:54:36-04:00</updated>
+  <updated>2012-10-17T20:10:55-04:00</updated>
   <id>http://jrowdev.com//</id>
   <author>
     <name><![CDATA[Josh Rowley]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Fog is starting to lift!]]></title>
+    <link href="http://jrowdev.com//blog/2012/10/17/fog-is-starting-to-lift/"/>
+    <updated>2012-10-17T19:56:00-04:00</updated>
+    <id>http://jrowdev.com//blog/2012/10/17/fog-is-starting-to-lift</id>
+    <content type="html"><![CDATA[<p>Avi talks about the &#8220;fog of programming&#8221;. There are so many different technologies at play in a web application, it&#8217;s all overwhelming at first. Not only that, but since all the technologies interact with each other, you need to be comfortable with how all of them work.</p>
+
+<p>As a result, new programmers feel like they&#8217;re in a fog cloud, where they kind of understand how things work and interact with each other.</p>
+
+<p>Then one day, you&#8217;ll finally learn something, and you&#8217;ll go back to those fuzzy concepts and you&#8217;ll suddenly a ray of clarity will strike your mind and things start to come together more.</p>
+
+<p>I&#8217;m really starting to understand classes, and how damn useful they are. I kind of understood classes and class methods, but I finally &#8220;saw the light&#8221; with instance variables and class methods.</p>
+
+<p>A couple days ago, variable scoping really started to click in my head, and now I see instance variables, instance methods, and class methods in a whole new light.</p>
+
+<p>It&#8217;s quite a rewarding feeling.</p>
+
+<p>Earlier in the semester, I wrote a very simple jukebox example, but have now rewritten it using object oriented code.</p>
+
+<p>Here&#8217;s the original:</p>
+
+<div style="max-width: 500px"><script src="https://gist.github.com/3909117.js?file=jukebox.rb"></script></div>
+
+
+<p>And here&#8217;s the object oriented version:</p>
+
+<div style="max-width: 500px"><script src="https://gist.github.com/3909073.js?file=oo_jukebox.rb"></script></div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Breakable Toys: Improve your programming through small, low-stakes projects]]></title>
