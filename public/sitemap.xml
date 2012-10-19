@@ -1,39 +1,39 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://jrowdev.com/blog/2012/10/04/hello-world/</loc>
+        <loc>http://jrowdev.com//blog/2012/10/04/hello-world/</loc>
         <lastmod>2012-10-04T23:26:12-04:00</lastmod>
     </url>
     <url>
-        <loc>http://jrowdev.com/blog/2012/10/04/sql-schemin-with-schemas/</loc>
+        <loc>http://jrowdev.com//blog/2012/10/04/sql-schemin-with-schemas/</loc>
         <lastmod>2012-10-17T12:33:32-04:00</lastmod>
     </url>
     <url>
         <loc>
-            http://jrowdev.com/blog/2012/10/09/tips-for-solo-githubbers-how-to-code-with-people-for-the-first-time/
+            http://jrowdev.com//blog/2012/10/09/tips-for-solo-githubbers-how-to-code-with-people-for-the-first-time/
         </loc>
         <lastmod>2012-10-17T12:30:47-04:00</lastmod>
     </url>
     <url>
         <loc>
-            http://jrowdev.com/blog/2012/10/17/breakable-toys-improve-your-programming-through-small-low-stakes-projects/
+            http://jrowdev.com//blog/2012/10/17/breakable-toys-improve-your-programming-through-small-low-stakes-projects/
         </loc>
         <lastmod>2012-10-17T12:54:29-04:00</lastmod>
     </url>
     <url>
-        <loc>http://jrowdev.com/blog/2012/10/17/fog-is-starting-to-lift/</loc>
+        <loc>http://jrowdev.com//blog/2012/10/17/fog-is-starting-to-lift/</loc>
         <lastmod>2012-10-17T23:10:10-04:00</lastmod>
     </url>
     <url>
-        <loc>http://jrowdev.com/about/</loc>
+        <loc>http://jrowdev.com//about/</loc>
         <lastmod>2012-10-17T12:50:48-04:00</lastmod>
     </url>
     <url>
-        <loc>http://jrowdev.com/blog/archives/</loc>
+        <loc>http://jrowdev.com//blog/archives/</loc>
         <lastmod>2012-10-17T23:10:10-04:00</lastmod>
     </url>
     <url>
-        <loc>http://jrowdev.com/</loc>
+        <loc>http://jrowdev.com//</loc>
         <lastmod>2012-10-17T23:10:10-04:00</lastmod>
     </url>
 </urlset>
