@@ -22,8 +22,8 @@ Earlier in the semester, I wrote a very simple jukebox example, but have now rew
 
 Here's the original:
 
-<div style="max-width: 700px"><script src="https://gist.github.com/3909117.js?file=jukebox.rb"></script></div>
+<div style="max-width: 600px"><script src="https://gist.github.com/3909117.js?file=jukebox.rb"></script></div>
 
 And here's the object oriented version:
 
-<div style="max-width: 700px"><script src="https://gist.github.com/3909073.js?file=oo_jukebox.rb"></script></div>
+<div style="max-width: 600px"><script src="https://gist.github.com/3915908.js?file=oo_jukebox.rb"></script></div>
