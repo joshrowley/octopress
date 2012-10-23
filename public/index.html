@@ -9,7 +9,7 @@
   <meta name="author" content="Josh Rowley">
 
   
-  <meta name="description" content="Tweet The Fog of Programming Oct 17th, 2012 Avi talks about the &#8220;fog of programming&#8221;. There are so many different technologies at play &hellip;">
+  <meta name="description" content="Tweet Testing With Minitest Oct 22nd, 2012 Up until today, all of my project work at Flatiron has been focused on writing application code. Today, I &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -108,6 +108,178 @@
   </header>
   <section id="main">
       
+  
+  
+    <article class="post">
+      <div class="sharing-box">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jrowdev.com/index.html" data-via="joshrowley" data-counturl="http://jrowdev.com/index.html" data-size="large">Tweet</a>
+  
+  
+  
+</div>
+
+      
+  <header>
+    
+      <h2 class="entry-title">
+        
+        <a href="/blog/2012/10/22/testing-with-minitest/">Testing With Minitest</a>
+        
+      </h2>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-22T20:24:00-04:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <p>Up until today, all of my project work at Flatiron has been focused on writing application code. Today, I started learning about how to write the companion test suites.</p>
+
+<h3>Why Testing is Important</h3>
+
+<p>Writing test suites is important because it helps ensure that your program does what you think it does. Your tests define <strong>your expectations</strong> for your program. When you run your test suite, your tests should pass if your program&#8217;s behavior matches these expectations, and fail if the reality is different.</p>
+
+<p>Testing becomes very powerful once you start coding using a test driven development approach. Rather than writing tests for your existing code, you write your tests before anything else. Define the expected behavior in the test, and then write the necessary code to get the test to pass. Once, the test is passing, refactor your code to remove repetition and improve code reability. As you continue to build a large collection of tests, your full test suite should warn you if new code starts to cause bugs somewhere else.  These early warning flags help keep your code stable and minimize bugs.</p>
+
+<h3>What is Minitest?</h3>
+
+<p>Minitest is a lightweight testing library for Ruby. Minitest used to be a separate gem, but as of Ruby 1.9 it&#8217;s  a part of the standard library that comes with Ruby. Require the library in any Ruby file and it adds all kinds of methods that make writing tests easier.</p>
+
+<h3>How to get started writing tests with Minitest?</h3>
+
+<p>For example, let&#8217;s say I&#8217;m writing a Flashcard class for an application for studying Spanish. Before writing any part of the Flashcard class, I&#8217;ll want to create tests for how I expect the Flashcard class to behave.</p>
+
+<p>I&#8217;ll first create a file for my test suite, <code>test.rb</code>. Within this file, I&#8217;ll want to make sure that the Minitest library is loaded before the tests are run. This is done by requiring the library:</p>
+
+<pre><code>require 'minitest/spec'
+require 'minitest/autorun'
+</code></pre>
+
+<p>We&#8217;ll also want to load the file that will contain the code we&#8217;re testing. In the same directory, let&#8217;s say <code>card.rb</code> is where I&#8217;m going to start writing the class definition. I&#8217;ll load it in through the require relative method:</p>
+
+<pre><code>require_relative 'flashcard.rb'
+</code></pre>
+
+<p>Now, I&#8217;ll write my tests. I should write tests for every expected behavior for the class. How do I write a test? Click on the block below to go through the process step by step.</p>
+
+<pre><code>describe Flashcard do
+end
+</code></pre>
+
+<p><strong>Step 1:</strong> Use Mintest&#8217;s describe method to create a block where all your tests relating to the Flashcard class will go. All your tests will go between the <code>do</code> and the <code>end</code> keywords.</p></p>
+
+<pre><code>describe Flashcard do
+  it "can create an instance of the Flashcard class" do
+  end
+end
+</code></pre>
+
+<p><strong>Step 2:</strong> Use the it method and pass in a string that describes the expected behavior. This will be the text that is printed when the test is failing to help you identify which functionality of your code is not behaving correctly. Be sure to pick a good name.</p>
+
+<pre><code>describe Flashcard do
+  it "can create an instance of the Flashcard class" do
+    flashcard = Flashcard.new
+  end
+end
+</code></pre>
+
+<p><strong>Step 3:</strong> Set up what needs to be in place before you make an assertion about the test. In this case, I&#8217;m testing whether I can create an instance of the Flashcard class, so I&#8217;ll want to set the stage by creating an instance.</p>
+
+<pre><code>describe Flashcard do
+  it "can create an instance of the Flashcard class" do
+    flashcard = Flashcard.new
+    flashcard.must_be_instance_of Flashcard
+  end
+end
+</code></pre>
+
+<p><strong>Step 4:</strong> Write an assertion about the expected behavior. Minitest has easy to understand methods such as <code>must_be_instance_of</code> that determine whether your test passed (whether the assertion is true), or failed (assertion returned false).</p>
+
+<p>Continue to write out all your expectations, until you have a sizeable list. Here are some example tests, you&#8217;ll probably have more tests than this, but note that there are tests are very basic stuff like whether the class even exists, up to whether the class adds a card into a user&#8217;s favorites.</p>
+
+<pre><code>describe Flashcard do
+
+    it "can create an instance of the Flashcard class" do
+      flashcard = Flashcard.new
+      flashcard.must_be_instance_of Flashcard
+    end
+
+    it "has a word attribute" do
+      flashcard = Flashcard.new
+      flashcard.word = "hola"
+      flashcard.word.must_be == "hola"
+    end
+
+    it "should respond to add_to_favorites method" do
+      flashcard = Flashcard.new
+      flashcard.must_respond_to add_to_favorites
+    end
+
+    it "should add favorite cards to a user's favorites" do
+      #TODO: write test once I figure out user class spec
+    end
+end
+</code></pre>
+
+<p>I run the tests by running the test file through Terminal: <code>ruby test.rb</code>. This is where a testing tool like Minitest comes in handy. The test file will print to the terminal any errors and whether the code from <code>flashcard.rb</code> passes the test. If it doesn&#8217;t pass, Minitest will print the actual value and the expected value that were inputted into that test&#8217;s assertion. When I run the above test suite, the first error I receive is:</p>
+
+<pre><code>/Users/josh/Desktop/test.rb:6:in &lt;main&gt;': uninitialized constant Flashcard (NameError)`
+</code></pre>
+
+<p>My suite describes a class Flashcard, but Ruby can&#8217;t find the class. In accordance with a test driven approach, I now add code into <code>flashcard.rb</code>, but only enough to get rid of that first error. In this case, all I need to do is define the class in <code>flashcard.rb</code>:</p>
+
+<pre><code>class Flashcard
+end
+</code></pre>
+
+<p>Now if I run <code>test.rb</code> again, I get the following:</p>
+
+<pre><code>Run options: --seed 19557
+
+# Running tests:
+
+.EE.
+
+Finished tests in 0.001041s, 3842.4592 tests/s, 960.6148 assertions/s.
+
+  1) Error:
+test_0003_should_respond_to_add_to_favorites_method(Flashcard):
+NameError: undefined local variable or method `add_to_favorites' for #&lt;#&lt;Class:0x007f9e8c0c65e8&gt;:0x007f9e8c062a70&gt;
+    test.rb:21:in `block (2 levels) in &lt;main&gt;'
+
+  2) Error:
+test_0002_has_a_word_attribute(Flashcard):
+NoMethodError: undefined method `word=' for #&lt;Flashcard:0x007f9e8c061be8&gt;
+    test.rb:15:in `block (2 levels) in &lt;main&gt;'
+
+4 tests, 1 assertions, 0 failures, 2 errors, 0 skips
+</code></pre>
+
+<p>As you can see, Minitest creates a very readable format for you. Your next step is to tackle fixing the next failing test. What&#8217;s great about writing these tests is that it forces you to explicitly define what your application should do before you write the code. Sometimes, writing tests for one class will help you figure out what other classes you need. For example on the last test, I want to add cards to a user&#8217;s favorites. Obviously, I&#8217;ll need to now write tests for a User class, and then also eventually make some design decisions on how cards are added to a user.</p>
+
+<p>Tests make you break the problem down into the smallest possible chunks, keep you focused on one small problem at a time, and help prevent feature creep and getting sidetracked. Plus, there&#8217;s an addictive reward you feel when you get a test to pass, even if it&#8217;s super basic, that&#8217;ll keep you motivated.</p>
+
+  
+  
+
+
+    </article>
   
   
     <article class="post">
