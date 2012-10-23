@@ -1,11 +1,17 @@
 ---
 layout: post
-title: "Testing with Minitest"
+title: "How to Get Started Writing Tests with Minitest"
 date: 2012-10-22 20:24
 comments: true
 categories: 
 ---
-Up until today, all of my project work at Flatiron has been focused on writing application code. Today, I started learning about how to write the companion test suites.
+<a href="http://www.flickr.com/photos/jeffwerner/4733627128/" title="Untitled by Jeff_Werner, on Flickr"><img src="http://farm2.staticflickr.com/1239/4733627128_86de4cd1cf.jpg" width="500" height="375" alt="Untitled"></a>
+
+Testing let's you check on the health of your code, making sure it's performing well. Photo by [Jeff Werner](http://www.flickr.com/photos/48023467@N00/4733627128/ "Photo by Jeff Werner")
+
+
+
+Up until today, all of my project work at Flatiron has been focused on writing application code. Today, I started learning about how to write the companion test suites. It's a bit intimidating, so here's how to get started.
 
 ###Why Testing is Important###
 
