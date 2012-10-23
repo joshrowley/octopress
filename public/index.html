@@ -163,7 +163,7 @@
 
 <h3>What is Minitest?</h3>
 
-<p>Minitest is a lightweight testing library for Ruby. Minitest used to be a separate gem, but as of Ruby 1.9 it&#8217;s  a part of the standard library that comes with Ruby. Require the library in any Ruby file and it adds all kinds of methods that make writing tests easier.</p>
+<p><a href="http://docs.seattlerb.org/minitest/" title="Minitest">Minitest</a> is a lightweight testing library for Ruby. Minitest used to be a separate gem, but as of Ruby 1.9 it&#8217;s  a part of the standard library that comes with Ruby. Require the library in any Ruby file and it adds all kinds of methods that make writing tests easier.</p>
 
 <h3>How to get started writing tests with Minitest?</h3>
 
@@ -175,12 +175,12 @@
 require 'minitest/autorun'
 </code></pre>
 
-<p>We&#8217;ll also want to load the file that will contain the code we&#8217;re testing. In the same directory, let&#8217;s say <code>card.rb</code> is where I&#8217;m going to start writing the class definition. I&#8217;ll load it in through the require relative method:</p>
+<p>We&#8217;ll also want to load the file that will contain the code we&#8217;re testing. In the same directory, let&#8217;s say <code>flashcard.rb</code> is where I&#8217;m going to start writing the class definition. I&#8217;ll load it in through the require relative method:</p>
 
 <pre><code>require_relative 'flashcard.rb'
 </code></pre>
 
-<p>Now, I&#8217;ll write my tests. I should write tests for every expected behavior for the class. How do I write a test? Click on the block below to go through the process step by step.</p>
+<p>Now, I&#8217;ll write my tests. I should write tests for every expected behavior for the class. How do I write a test?</p>
 
 <pre><code>describe Flashcard do
 end
@@ -275,7 +275,7 @@ NoMethodError: undefined method `word=' for #&lt;Flashcard:0x007f9e8c061be8&gt;
 4 tests, 1 assertions, 0 failures, 2 errors, 0 skips
 </code></pre>
 
-<p>As you can see, Minitest creates a very readable format for you. Your next step is to tackle fixing the next failing test. What&#8217;s great about writing these tests is that it forces you to explicitly define what your application should do before you write the code. Sometimes, writing tests for one class will help you figure out what other classes you need. For example on the last test, I want to add cards to a user&#8217;s favorites. Obviously, I&#8217;ll need to now write tests for a User class, and then also eventually make some design decisions on how cards are added to a user.</p>
+<p>As you can see, Minitest creates a nicely formatted results output for you. Your next step is to tackle fixing the next failing test. What&#8217;s great about writing these tests is that it forces you to explicitly define what your application should do before you write the code. Sometimes, writing tests for one class will help you figure out what other classes you need. For example on the last test, I want to add cards to a user&#8217;s favorites. Obviously, I&#8217;ll need to now write tests for a User class, and then also eventually make some design decisions on how cards are added to a user.</p>
 
 <p>Tests make you break the problem down into the smallest possible chunks, keep you focused on one small problem at a time, and help prevent feature creep and getting sidetracked. Plus, there&#8217;s an addictive reward you feel when you get a test to pass, even if it&#8217;s super basic, that&#8217;ll keep you motivated.</p>
 
