@@ -1,7 +1,7 @@
 require "bundler/capistrano"
 
 set :application, "octopress"
-set :repository,  "https://github.com/xfernandox/octopress.git"
+set :repository,  "git@github.com:xfernandox/octopress.git"
 
 set :user, 'deploy'
 set :deploy_to, "home/#{ user }/#{ application }"
