@@ -4,7 +4,7 @@ set :application, "octopress"
 set :repository,  "git@github.com:xfernandox/octopress.git"
 
 set :user, 'deploy'
-set :deploy_to, "home/#{ user }/#{ application }"
+set :deploy_to, "/home/#{ user }/#{ application }"
 set :use_sudo, false
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
