@@ -8,7 +8,7 @@ categories:
 
 For the last month, my team and I have been working on Gitbo, an app for finding open source software issues on Github and providing incentives for improvement by having users issue monetary bounties for solutions.
 
-One of the challenges that we had to overcome was managing our calls to the Github API. Github's starting limit on API requests for developers is 5000 per hour. Gitbo needs to pull all sorts of data from Github's API about developer's repositories, their related issues and comments, as well as user details.
+One of the challenges we had to overcome was managing our calls to the Github API. Github's starting limit on API requests for developers is 5000 per hour. Gitbo needs to pull all sorts of data from Github's API about developer's repositories, their related issues and comments, as well as user details.
 
 Furthermore, we wanted to keep repository and issue information as fresh as we could in Gitbo. This required frequent calls to the Github API for every record in our database containing information from Github. It wasn't long before we started hitting the limit, which became a huge roadblock in development as well as a large red flag of future scalability problems for our app in production.
 
