@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>How to Make Conditional Requests to Github's API using Octokit - Free Play</title>
+  <meta name="author" content="Josh Rowley">
+
+  
+  <meta name="description" content="Tweet How to Make Conditional Requests to Github's API Using Octokit Nov 30th, 2012 For the last month, my team and I have been working on Gitbo, an &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jrowdev.com/blog/2012/11/30/how-to-make-conditional-requests-to-githubs-api-using-octokit/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Free Play" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35494287-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body >
+  <header role="banner" id="sidebar">
+    <!-- Logo -->
+<aside id="logo" class="">
+     
+  <img width="150px" style="border-radius: 7px; border: 5px solid #6C08E8" src="/images/joshrowley.jpg"><br><br>
+  </div>
+</aside>
+
+<ul id="menu">
+
+  <li class="title">
+    <h1 id="title"><a href="/">Free Play</a></h1>
+  </li>
+
+
+  <li class="subtitle">
+    <h2 id="subtitle">Josh Rowley's coding blog</h2>
+  </li>
+
+  <li class="link">
+    <a href="/about/">about</a>
+  </li>
+  <li class="link">
+    <a href="mailto:joshua.f.rowley@gmail.com">email</a>
+  </li>
+
+  <li class="link">
+    <a href="http://twitter.com/joshrowley/">twitter</a>
+  </li>
+
+
+  <li class="link">
+    <a href="http://github.com/xfernandox/">github</a>
+  </li>
+
+  <li class="link rss">
+    <a href="/atom.xml">rss feed</a>
+  </li>
+</ul>
+
+
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jrowdev.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+
+
+<!-- Octopress Love -->
+<aside id="octopress_linkback">
+  <a href="http://octopress.org/">
+    <span class="unicode_square">
+      <span class="unicode_circle">
+        &nbsp;
+      </span>
+    </span>
+    <span class="octopress">Powered by Octopress</span>
+  </a>
+</aside>
+
+  </header>
+  <section id="main">
+    <article class="post">
+  <div class="sharing-box">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jrowdev.com/blog/2012/11/30/how-to-make-conditional-requests-to-githubs-api-using-octokit/" data-via="joshrowley" data-counturl="http://jrowdev.com/blog/2012/11/30/how-to-make-conditional-requests-to-githubs-api-using-octokit/" data-size="large">Tweet</a>
+  
+  
+  
+</div>
+
+  
+  <header>
+    
+      <h2 class="entry-title">How to Make Conditional Requests to Github's API Using Octokit</h2>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-30T01:25:00-05:00" pubdate data-updated="true">Nov 30<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<p>For the last month, my team and I have been working on Gitbo, an app for finding open source software issues on Github and providing incentives for improvement by having users issue monetary bounties for solutions.</p>
+
+<p>One of the challenges that we had to overcome was managing our calls to the Github API. Github&#8217;s starting limit on API requests for developers is 5000 per hour. Gitbo needs to pull all sorts of data from Github&#8217;s API about developer&#8217;s repositories, their related issues and comments, as well as user details.</p>
+
+<p>Furthermore, we wanted to keep repository and issue information as fresh as we could in Gitbo. This required frequent calls to the Github API for every record in our database containing information from Github. It wasn&#8217;t long before we started hitting the limit, which became a huge roadblock in development as well as a large red flag of future scalability problems for our app in production.</p>
+
+<p>The Github API documentation outlines how to make <a href="" title="http://developer.github.com/v3/#conditional-requests">conditional requests</a> by adding an <code>If-Modified-Since</code> header to the HTTP request to the API which will return a <code>304 Not Modified</code> HTTP response if the resource hasn&#8217;t been modified since that time. This was a great solution for our problem because any <code>304</code> responses from Github do not count against our rate limit. If the API resource has been modified since the time you requested, the API returns the normal JSON response.</p>
+
+<p>The question was how to add this into our app. We had already implemented a fantastic open source API wrapper called <a href="" title="https://github.com/pengwynn/octokit"><code>octokit</code></a>, maintained by <a href="" title="https://twitter.com/pengwynn"><code>pengwynn</code></a> who has been a super helpful resource for our group. My fellow team members <a href="" title="http://students.flatironschool.com/adamjonas">Adam</a> and <a href="" title="http://students.flatironschool.com/kevinmcnamee">Kevin</a> found a <a href="" title="https://github.com/pengwynn/octokit/pull/142">pull request</a> to Octokit from <a href="" title="https://github.com/bratsche"><code>bratsche</code></a> which adds support for making conditional requests. However, Wynn decided not to merge into Octokit, preferring a middleware solution, so they merged the new commits from <a href="" title="https://github.com/bratsche/octokit"><code>bratche/octokit</code></a> into Adam&#8217;s <a href="" title="https://github.com/ajonas04/octokit">fork</a> of <code>octokit</code>.</p>
+
+<p>You can view the additional source code that adds the support in the <a href="" title="https://github.com/ajonas04/octokit/commit/e978e441bdd810ae29754aa44250baec25bfcab0">merge commit</a>.</p>
+
+<p>If you&#8217;d like to make conditional requests in your application using <code>octokit</code> simply add <code>octokit</code> into your <code>Gemfile</code> with Adam&#8217;s repo as the source:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="s1">&#39;octokit&#39;</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s1">&#39;ajonas04/octokit&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Make sure to <code>bundle install</code> or <code>bundle update</code> depending on whether you already have <code>pengwynn</code>&#8217;s original <code>octokit</code> loaded.</p>
+
+<p>Now with conditional requests, you can add a <code>:since</code> option into all requests to Github that will make the request conditional, returning the full JSON response of the resource if its <code>Last-Modified</code> header in the conditional request&#8217;s response is later than the datetime query string you sent.</p>
+
+<p>In order for it to work, you&#8217;ll need to send the query string to Github in <a href="" title="http://www.csgnetwork.com/timerfc1123calc.html">RFC 1123 Time Format</a>. Luckily, Ruby&#8217;s Time library has a method <code>httpdate</code> which will convert a Ruby Datetime or Time object into a string with this format.</p>
+
+<p>Let&#8217;s see it in action, I&#8217;ll make a conditional request with the current time as the <code>:since</code> parameter. Since the resource will probably not have been modified in the time between the time object&#8217;s creation and when Github receives the request, we&#8217;ll see the benefits for our rate limit:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">client</span> <span class="o">=</span> <span class="no">Octokit</span><span class="o">::</span><span class="no">Client</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:login</span> <span class="o">=&gt;</span> <span class="n">username</span><span class="p">,</span> <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="n">password</span><span class="p">)</span>
+</span><span class='line'><span class="n">client</span><span class="o">.</span><span class="n">rate_limit_remaining</span>
+</span><span class='line'><span class="c1">#=&gt; 5000</span>
+</span><span class='line'><span class="n">current_time</span> <span class="o">=</span> <span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">httpdate</span>
+</span><span class='line'><span class="n">client</span><span class="o">.</span><span class="n">repositories</span><span class="p">(</span><span class="s2">&quot;joshrowley&quot;</span><span class="p">,</span> <span class="ss">:since</span> <span class="o">=&gt;</span> <span class="n">current_time</span><span class="p">)</span>
+</span><span class='line'><span class="c1">#=&gt; nil # this nil tells us we received a 304 response</span>
+</span><span class='line'><span class="n">client</span><span class="o">.</span><span class="n">rate_limit_remaining</span>
+</span><span class='line'><span class="c1">#=&gt; 5000</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+
+
+</article>
+
+  <section class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+
+    <nav role="navigation" id="pagination">
+
+</nav>
+  </section>
+  
+
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'joshrowley';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://jrowdev.com/blog/2012/11/30/how-to-make-conditional-requests-to-githubs-api-using-octokit/';
+        var disqus_url = 'http://jrowdev.com/blog/2012/11/30/how-to-make-conditional-requests-to-githubs-api-using-octokit/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+</body>
+</html>
